@@ -12,10 +12,16 @@
     </h:head>
     <h:body>
 
-        <h1>#{testView.string}</h1>
-        <h:form id="frmTest">
-
-        </h:form>
+        <h1>Label Float Problem</h1>
+	<span class="ui-float-label mb-4">
+		<p:inputNumber symbol="%" decimalPlaces="0" symbolPosition="s" />
+		<p:outputLabel for="@previous" value="Float Label" />
+	</span>
+	<br/><br/><br/>
+	<span class="ui-float-label">
+		<p:inputText />
+		<p:outputLabel for="@previous" value="Expected Behavior" />
+	</span>
 
     </h:body>
 </html>

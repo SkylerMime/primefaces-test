@@ -33,5 +33,12 @@ public class TestView implements Serializable {
                 new TestObject("The Dark Side of the Moon", "Pink Floyd", 1973)
         ));
     }
+	
+    public String getString() {
+	return string;
+    }
 
+    public void setString(String string) {
+	this.string = string;
+    }
 }
