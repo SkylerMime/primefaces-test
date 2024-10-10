@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="jakarta.faces.facelets"
-      xmlns:f="jakarta.faces.core"
-      xmlns:h="jakarta.faces.html"
-      xmlns:p="primefaces">
+	xmlns:ui="jakarta.faces.facelets" xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html" xmlns:p="primefaces">
 
-    <h:head>
-        <title>PrimeFaces Test</title>
-        <h:outputScript name="test.js" />
-        <h:outputStylesheet name="test.css" />
-    </h:head>
-    <h:body>
+<h:head>
+	<title>PrimeFaces Test</title>
+	<h:outputScript name="test.js" />
+	<h:outputStylesheet name="test.css" />
+</h:head>
+<h:body>
 
-        <h1>#{testView.string}</h1>
-        <h:form id="frmTest">
+	<h1>#{testView.string}</h1>
 
-        </h:form>
+	<h2>Null Values Fail With Exception</h2>
+	<h:form id="frmTest2">
+		<p:dataTable var="song" value="#{testView.list}">
+			<p:column headerText="Name" field="#{song.name}" />
 
-    </h:body>
+			<p:column headerText="Artist" field="#{song.artist}" />
+		</p:dataTable>
+	</h:form>
+
+</h:body>
 </html>
