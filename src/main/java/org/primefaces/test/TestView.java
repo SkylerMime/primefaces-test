@@ -28,10 +28,10 @@ public class TestView implements Serializable {
 	@PostConstruct
 	public void init() {
 		string = "Welcome to PrimeFaces!!!";
-		list = new ArrayList<>(Arrays.asList(new TestObject("Thriller", "Michael Jackson", 1982),
-				new TestObject("Back in Black", "AC/DC", 1980),
-				new TestObject("The Bodyguard", "Whitney Houston", 1992),
-				new TestObject("The Dark Side of the Moon", "Pink Floyd", 1973)));
+		list = new ArrayList<>(Arrays.asList(new TestObject("Thriller", "Michael Jackson", 1982, Status.MY_SUCCESS),
+				new TestObject("Back in Black", "AC/DC", 1980, Status.UNRESOLVED),
+				new TestObject("The Bodyguard", "Whitney Houston", 1992, Status.MY_SUCCESS),
+				new TestObject("The Dark Side of the Moon", "Pink Floyd", 1973, Status.FAILURE)));
 	}
 
 	public List<Status> getStatusList() {
@@ -42,4 +42,7 @@ public class TestView implements Serializable {
 		return statusList;
 	}
 
+	public List<TestObject> getDataList() {
+		return this.list;
+	}
 }

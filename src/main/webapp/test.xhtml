@@ -12,11 +12,18 @@
 
 	<h1>#{testView.string}</h1>
 	<h:form id="frmTest">
-		<p:selectOneMenu value="#{testView.currentStatus}">
-			<f:selectItems value="#{testView.statusList}" />
-			<p:ajax update="frmTest" />
-		</p:selectOneMenu>
-		<h:outputText value="Enum value: #{testView.currentStatus}" />
+		<div style="display: flex; direction: column;">
+			<h2>toString example</h2>
+			<p:selectOneMenu value="#{testView.currentStatus}">
+				<f:selectItems value="#{testView.statusList}" />
+				<p:ajax update="frmTest" />
+			</p:selectOneMenu>
+			<h:outputText value="Enum value: #{testView.currentStatus}" />
+			<h2>enum.name example</h2>
+			<p:dataTable value="#{testView.dataList}" var="row">
+				<p:column headerText="Status" field="status" />
+			</p:dataTable>
+		</div>
 	</h:form>
 
 </h:body>

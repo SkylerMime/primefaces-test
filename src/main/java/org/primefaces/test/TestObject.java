@@ -13,12 +13,14 @@ public class TestObject implements Serializable {
     private String name;
     private String artist;
     private Integer released;
+    private Status status;
 
-    public TestObject(String name, String artist, Integer released) {
+    public TestObject(String name, String artist, Integer released, Status status) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.artist = artist;
         this.released = released;
+        this.status = status;
     }
 
 }
