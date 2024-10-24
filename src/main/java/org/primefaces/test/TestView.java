@@ -17,21 +17,29 @@ import lombok.Data;
 @ViewScoped
 public class TestView implements Serializable {
 
-    private String string;
-    private Integer integer;
-    private BigDecimal decimal;
-    private LocalDateTime localDateTime;
-    private List<TestObject> list;
+	private String string;
+	private Integer integer;
+	private BigDecimal decimal;
+	private LocalDateTime localDateTime;
+	private List<TestObject> list;
 
-    @PostConstruct
-    public void init() {
-        string = "Welcome to PrimeFaces!!!";
-        list = new ArrayList<>(Arrays.asList(
-                new TestObject("Thriller", "Michael Jackson", 1982),
-                new TestObject("Back in Black", "AC/DC", 1980),
-                new TestObject("The Bodyguard", "Whitney Houston", 1992),
-                new TestObject("The Dark Side of the Moon", "Pink Floyd", 1973)
-        ));
-    }
+	private Status currentStatus;
+
+	@PostConstruct
+	public void init() {
+		string = "Welcome to PrimeFaces!!!";
+		list = new ArrayList<>(Arrays.asList(new TestObject("Thriller", "Michael Jackson", 1982),
+				new TestObject("Back in Black", "AC/DC", 1980),
+				new TestObject("The Bodyguard", "Whitney Houston", 1992),
+				new TestObject("The Dark Side of the Moon", "Pink Floyd", 1973)));
+	}
+
+	public List<Status> getStatusList() {
+		List<Status> statusList = new ArrayList<Status>();
+		statusList.add(Status.MY_SUCCESS);
+		statusList.add(Status.FAILURE);
+		statusList.add(Status.UNRESOLVED);
+		return statusList;
+	}
 
 }

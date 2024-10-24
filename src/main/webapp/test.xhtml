@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="jakarta.faces.facelets"
-      xmlns:f="jakarta.faces.core"
-      xmlns:h="jakarta.faces.html"
-      xmlns:p="primefaces">
+	xmlns:ui="jakarta.faces.facelets" xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html" xmlns:p="primefaces">
 
-    <h:head>
-        <title>PrimeFaces Test</title>
-        <h:outputScript name="test.js" />
-        <h:outputStylesheet name="test.css" />
-    </h:head>
-    <h:body>
+<h:head>
+	<title>PrimeFaces Test</title>
+	<h:outputScript name="test.js" />
+	<h:outputStylesheet name="test.css" />
+</h:head>
+<h:body>
 
-        <h1>#{testView.string}</h1>
-        <h:form id="frmTest">
+	<h1>#{testView.string}</h1>
+	<h:form id="frmTest">
+		<p:selectOneMenu value="#{testView.currentStatus}">
+			<f:selectItems value="#{testView.statusList}" />
+			<p:ajax update="frmTest" />
+		</p:selectOneMenu>
+		<h:outputText value="Enum value: #{testView.currentStatus}" />
+	</h:form>
 
-        </h:form>
-
-    </h:body>
+</h:body>
 </html>
