@@ -22,6 +22,7 @@ public class TestView implements Serializable {
     private BigDecimal decimal;
     private LocalDateTime localDateTime;
     private List<TestObject> list;
+    private TestObject selected;
 
     @PostConstruct
     public void init() {
