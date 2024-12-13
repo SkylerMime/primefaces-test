@@ -15,7 +15,7 @@
         <h1>#{testView.string}</h1>
         <h:form id="frmTest">
 			<p:selectOneMenu value="#{testView.selected}">
-				<p:ajax update="@this" process="@this" />
+				<p:ajax update="@form" process="@this" />
 				<f:selectItem itemLabel="Select" itemValue="" />
 				<f:selectItems value="#{testView.list}" var="option" itemLabel="#{option.name}" itemValue="#{option}" />
 			</p:selectOneMenu>
