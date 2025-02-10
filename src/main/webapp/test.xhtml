@@ -4,6 +4,7 @@
       xmlns:f="jakarta.faces.core"
       xmlns:h="jakarta.faces.html"
       xmlns:p="primefaces"
+      xmlns:comp="http://xlmns.jcp.org/jsf/composite/components"
       xmlns:o="http://omnifaces.org/ui">
 
     <h:head>
@@ -15,14 +16,8 @@
 
         <h1>#{testView.string}</h1>
         <h:form id="frmTest">
-        	<p:messages />
-			<p:selectOneMenu value="#{testView.selected}">
-				<p:ajax update=":frmTest" process="@this" />
-				<f:selectItem itemLabel="Select" itemValue="" />
-				<f:selectItems value="#{testView.list}" var="option" itemLabel="#{option.name}" itemValue="#{option}" />
-				<o:selectItemsConverter />
-			</p:selectOneMenu>
-			<h:outputText value="TEST: #{testView.selected.name}"/>
+            Before Component
+        	<comp:myComponent userNumber="42" />
         </h:form>
 
     </h:body>

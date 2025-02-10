@@ -1,0 +1,20 @@
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:cc="http://xmlns.jcp.org/jsf/composite">
+	<!-- Composite component to display information about an Owner or Contact in a card. Specifically designed for the Partner Details page. -->
+	<cc:interface componentType="myComponent">
+		<cc:attribute name="userNumber" type="java.lang.String" />
+	</cc:interface>
+
+	<cc:implementation>
+		<f:event type="postAddToView" listener="#{cc.init}" />
+
+		Inside Component
+		<h:outputText value="#{cc.generatedId}" />
+		<h:outputText value="{cc.unchangingId}" />
+
+	</cc:implementation>
+</ui:component>
