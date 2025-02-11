@@ -6,14 +6,15 @@
       xmlns:p="primefaces"
       xmlns:cc="jakarta.faces.composite">
 	<!-- Composite component to display information about an Owner or Contact in a card. Specifically designed for the Partner Details page. -->
-	<cc:interface>
+	<cc:interface componentType="myComponent">
 		<cc:attribute name="userNumber" type="java.lang.String" />
 	</cc:interface>
 
 	<cc:implementation>
+		<f:event type="postAddToView" listener="#{cc.init}" />
 
 		Inside Component
-		<h:outputText value="#{cc.attrs.userNumber}" />
+		<h:outputText value="#{cc.generatedId}" />
 
 	</cc:implementation>
 </html>
