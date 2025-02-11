@@ -4,7 +4,7 @@
       xmlns:f="jakarta.faces.core"
       xmlns:h="jakarta.faces.html"
       xmlns:p="primefaces"
-      xmlns:comp="http://xlmns.jcp.org/jsf/composite/components"
+      xmlns:composite="jakarta.faces.composite/composite"
       xmlns:o="http://omnifaces.org/ui">
 
     <h:head>
@@ -17,7 +17,7 @@
         <h1>#{testView.string}</h1>
         <h:form id="frmTest">
             Before Component
-        	<comp:myComponent userNumber="42" />
+        	<composite:myComponent userNumber="42" />
         </h:form>
 
     </h:body>
