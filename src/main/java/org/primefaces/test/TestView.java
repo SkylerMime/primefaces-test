@@ -34,4 +34,8 @@ public class TestView implements Serializable {
                 new TestObject("The Dark Side of the Moon", "Pink Floyd", 1973)
         ));
     }
+    
+    public void initSpecial() {
+    	System.out.println("Success! Initialize view called.");
+    }
 }

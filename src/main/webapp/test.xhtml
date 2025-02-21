@@ -4,7 +4,7 @@
       xmlns:f="jakarta.faces.core"
       xmlns:h="jakarta.faces.html"
       xmlns:p="primefaces"
-      xmlns:o="http://omnifaces.org/ui">
+      xmlns:my="http://example.com/custom">
 
     <h:head>
         <title>PrimeFaces Test</title>
@@ -13,16 +13,8 @@
     </h:head>
     <h:body>
 
-        <h1>#{testView.string}</h1>
         <h:form id="frmTest">
-        	<p:messages />
-			<p:selectOneMenu value="#{testView.selected}">
-				<p:ajax update=":frmTest" process="@this" />
-				<f:selectItem itemLabel="Select" itemValue="" />
-				<f:selectItems value="#{testView.list}" var="option" itemLabel="#{option.name}" itemValue="#{option}" />
-				<o:selectItemsConverter />
-			</p:selectOneMenu>
-			<h:outputText value="TEST: #{testView.selected.name}"/>
+        	<my:customTag initAction="#{testView.initSpecial}" />
         </h:form>
 
     </h:body>
