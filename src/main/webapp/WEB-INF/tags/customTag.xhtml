@@ -2,11 +2,10 @@
 	xmlns:f="jakarta.faces.core"
 	xmlns:h="jakarta.faces.html"
 	xmlns:ui="jakarta.faces.facelets"
+	xmlns:o="http://omnifaces.org/ui"
 >
-	
-		<f:metadata>
-			<f:event type="preRenderComponent" listener="#{initAction}" />
-		</f:metadata>
+		<o:methodParam name="method" value="#{initAction}"
+		<f:event type="preRenderComponent" listener="#{method}" />
 
 		Inside Component
 </ui:composition>
