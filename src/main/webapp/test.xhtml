@@ -14,7 +14,21 @@
 
         <h1>#{testView.string}</h1>
         <h:form id="frmTest">
+            <p:growl id="growl" />
 
+            <p:commandButton value="Download Without Ajax" ajax="false"
+                icon="pi pi-arrow-down" styleClass="mr-2"
+                actionListener="#{testView.prepareFile}"
+            >
+                <p:fileDownload value="#{testView.file}"/>
+            </p:commandButton>
+            <br /><br />
+            <p:commandButton value="Download With Ajax" ajax="false"
+                icon="pi pi-arrow-down" styleClass="mr-2"
+                update="frmTest:growl"
+            >
+                <p:fileDownload value="#{testRequestBean.getFile('downloaded_boromir.jpg')}"/>
+            </p:commandButton>
         </h:form>
 
     </h:body>

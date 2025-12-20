@@ -21,7 +21,7 @@ import lombok.Getter;
 @Data
 @Named
 @ViewScoped
-public class TestView implements Serializable {
+public class TestRequestBean implements Serializable {
 
     private String string;
     private Integer integer;
@@ -29,28 +29,15 @@ public class TestView implements Serializable {
     private LocalDateTime localDateTime;
     private List<TestObject> list;
 
-    @Getter
-    private StreamedContent file;
-
-    @PostConstruct
-    public void init() {
-        string = "Welcome to PrimeFaces!!!";
-        list = new ArrayList<>(Arrays.asList(
-                new TestObject("Thriller", "Michael Jackson", 1982),
-                new TestObject("Back in Black", "AC/DC", 1980),
-                new TestObject("The Bodyguard", "Whitney Houston", 1992),
-                new TestObject("The Dark Side of the Moon", "Pink Floyd", 1973)
-        ));
-    }
-
-    public void prepareFile() {
-        file = DefaultStreamedContent.builder()
-                .name("downloaded_boromir.jpg")
+    public StreamedContent getFile(String name) {
+        StreamedContent file = DefaultStreamedContent.builder()
+                .name(name)
                 .contentType("image/jpg")
                 .stream(() -> FacesContext.getCurrentInstance().getExternalContext().getResourceAsStream("/resources/demo/images/boromir.jpg"))
                 .build();
 
         FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_INFO, "File Downloaded", "The file has been downloaded successfully.");
         FacesContext.getCurrentInstance().addMessage(null, facesMessage);
+        return file;
     }
 }
